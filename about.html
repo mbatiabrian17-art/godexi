@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - GODEX</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<!-- ================= NAVBAR ================= -->
+<nav class="navbar">
+    <div class="logo">GODEX</div>
+    <ul class="nav-links">
+        <li><a href="login.html">Login</a></li>
+        <li><a href="home.html">Home</a></li>
+        <li><a href="about.html" class="active">About</a></li>
+        <li><a href="product.html">Products</a></li>
+        <li>
+            <a href="cart.html">Cart (<span id="cart-count">0</span>)</a>
+        </li>
+        <li>
+    <button class="theme-toggle" onclick="toggleTheme()">🌙</button>
+</li>
+
+    </ul>
+</nav>
+
+<!-- ================= ABOUT SECTION ================= -->
+<section class="about-container glass-effect animate-fade-in">
+    <h1>About GODEX</h1>
+    <p>
+        GODEX is a premier e-commerce platform specializing in high-quality electronic devices.
+        We aim to provide a seamless shopping experience with a wide range of smartphones,
+        laptops, accessories, and smart gadgets.
+    </p>
+    <p>
+        Based in Nairobi, Kenya, our team is driven by innovation, integrity, and a passion
+        for making technology accessible to everyone.
+    </p>
+</section>
+
+<!-- ================= STAFF / REVIEWS SECTION ================= -->
+<section class="container glass-effect animate-fade-in">
+    <h2 class="section-title">What Our Team Says</h2>
+
+    <!-- ✅ STAFF GRID ADDED HERE -->
+    <div class="staff-grid">
+
+        <div class="staff-card">
+            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Staff member">
+            <h3>Operations Team</h3>
+            <p class="role">Logistics & Delivery</p>
+            <p class="review">
+                “Working at GODEX has been rewarding. The focus on fast delivery and customer
+                satisfaction pushes us to give our best every day.”
+            </p>
+        </div>
+
+        <div class="staff-card">
+            <img src="https://randomuser.me/api/portraits/women/45.jpg" alt="Staff member">
+            <h3>Sales Team</h3>
+            <p class="role">Customer Engagement</p>
+            <p class="review">
+                “GODEX values customers and staff equally. We’re empowered to help customers
+                find the perfect device for their needs.”
+            </p>
+        </div>
+
+        <div class="staff-card">
+            <img src="https://randomuser.me/api/portraits/men/61.jpg" alt="Staff member">
+            <h3>Tech Support</h3>
+            <p class="role">Technical Assistance</p>
+            <p class="review">
+                “I love the teamwork here. Solving customer problems and ensuring smooth
+                experiences is what motivates us.”
+            </p>
+        </div>
+
+        <div class="staff-card">
+            <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Staff member">
+            <h3>Customer Service</h3>
+            <p class="role">Support & Care</p>
+            <p class="review">
+                “GODEX truly listens to customers. We are encouraged to be patient, helpful,
+                and solution-oriented.”
+            </p>
+        </div>
+
+    </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer class="footer glass-effect">
+    <p>&copy; 2026 GODEX. All rights reserved.</p>
+</footer>
+
+<!-- ================= SCRIPTS ================= -->
+<script>
+    const cart = JSON.parse(localStorage.getItem("cart")) || [];
+    const count = document.getElementById("cart-count");
+    if (count) count.innerText = cart.length;
+</script>
+
+<script src="js/auth.js"></script>
+
+</body>
+</html>

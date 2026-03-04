@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products - GODEX</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<!-- ================= NAVBAR ================= -->
+<nav class="navbar">
+    <div class="logo">GODEX</div>
+    <ul class="nav-links">
+        
+        <li><a href="home.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="product.html">Products</a></li>
+        <li>
+            <a href="cart.html">Cart (<span id="cart-count">0</span>)</a>
+        </li>
+        <li>
+            <button class="theme-toggle" onclick="toggleTheme()">🌙</button>
+        </li>
+    </ul>
+</nav>
+
+<!-- ================= PRODUCTS ================= -->
+<section class="product-grid">
+    <h2 class="section-title">Our Products</h2>
+    <div class="products-container" id="products-container">
+        <!-- Products loaded dynamically -->
+    </div>
+</section>
+
+<!-- ================= CART LOGIC ================= -->
+<script>
+    function getCart() {
+        return JSON.parse(localStorage.getItem('cart')) || [];
+    }
+
+    function updateCartCount() {
+        const countEl = document.getElementById('cart-count');
+        const cart = getCart();
+        if (countEl) countEl.innerText = cart.length;
+    }
+
+    function addToCart(product) {
+        const cart = getCart();
+        cart.push(product);
+        localStorage.setItem('cart', JSON.stringify(cart));
+        updateCartCount();
+        alert("Added to cart");
+    }
+
+    // Update cart count on page load
+    document.addEventListener('DOMContentLoaded', updateCartCount);
+</script>
+
+<!-- ================= SCRIPTS ================= -->
+<script src="js/product-card.js"></script>
+<script src="js/auth.js"></script>
+
+</body>
+</html>
